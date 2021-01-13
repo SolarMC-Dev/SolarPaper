@@ -14,8 +14,8 @@
     <url>https://github.com/PaperMC/Paper</url>
 
     <modules>
-        <module>Paper-Server</module>
-        <module>Paper-API</module>
+        <module>SolarPaper-Server</module>
+        <module>SolarPaper-API</module>
     </modules>
 
     <build>
