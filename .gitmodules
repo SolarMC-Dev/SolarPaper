@@ -1,0 +1,6 @@
+[submodule "SolarPaper-API"]
+	path = SolarPaper-API
+	url = https://github.com/SolarMC-Dev/SolarPaper-API
+[submodule "SolarPaper-Server"]
+	path = SolarPaper-Server
+	url = https://github.com/SolarMC-Dev/SolarPaper-Server
