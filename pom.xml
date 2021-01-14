@@ -1,54 +1,33 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <!-- Avoid making changes to this file, it has to be deployed manually -->
-    <groupId>com.destroystokyo.paper</groupId>
-    <artifactId>paper-parent</artifactId>
-    <version>dev-SNAPSHOT</version>
-    <packaging>pom</packaging>
+	<parent>
+		<groupId>gg.solarmc</groupId>
+		<artifactId>solar-parent</artifactId>
+		<version>0.2.0</version>
+	</parent>
 
-    <name>Paper-Parent</name>
-    <description>Parent project for all Paper modules.</description>
-    <url>https://github.com/PaperMC/Paper</url>
+	<groupId>gg.solarmc</groupId>
+	<artifactId>solarpaper-parent</artifactId>
+	<version>1.12.2-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-    <modules>
-        <module>SolarPaper-Server</module>
-        <module>SolarPaper-API</module>
-    </modules>
+	<properties>
+		<slf4j.version>1.7.30</slf4j.version>
+		<junit.version>4.13.1</junit.version>
+	</properties>
 
-    <build>
-        <defaultGoal>clean install</defaultGoal>
-    </build>
+	<modules>
+		<module>SolarPaper-Server</module>
+		<module>SolarPaper-API</module>
+	</modules>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
-    <repositories>
-        <repository>
-            <id>md_5-releases</id>
-            <url>https://repo.md-5.net/content/repositories/releases/</url>
-        </repository>
-        <repository>
-            <id>aikar</id>
-            <url>https://repo.aikar.co/content/groups/aikar/</url>
-        </repository>
-        <repository>
-            <id>destroystokyo-repo</id>
-            <url>https://destroystokyo.com/repo/repository/maven-public/</url>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>papermc-releases</id>
-            <url>https://papermc.io/repo/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>papermc-snapshots</id>
-            <url>https://papermc.io/repo/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+	<repositories>
+		<repository>
+			<id>solar-releases</id>
+			<url>https://mvn-repo.platinum-mc.com/releases</url>
+		</repository>
+	</repositories>
 </project>
