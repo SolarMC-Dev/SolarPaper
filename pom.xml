@@ -9,7 +9,6 @@
 		<version>0.2.0</version>
 	</parent>
 
-	<groupId>gg.solarmc</groupId>
 	<artifactId>solarpaper-parent</artifactId>
 	<version>1.12.2-R0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -17,7 +16,7 @@
 	<properties>
 		<slf4j.version>1.7.30</slf4j.version>
 		<junit.version>4.13.1</junit.version>
-		<dataloader.version>0.1.0-SNAPSHOT</dataloader.version>
+		<dataloader.version>0.2.0</dataloader.version>
 	</properties>
 
 	<modules>
