@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>gg.solarmc</groupId>
 		<artifactId>solar-parent</artifactId>
-		<version>0.2.0</version>
+		<version>0.4.0</version>
 	</parent>
 
 	<artifactId>solarpaper-parent</artifactId>
@@ -16,7 +16,7 @@
 	<properties>
 		<slf4j.version>1.7.30</slf4j.version>
 		<junit.version>4.13.1</junit.version>
-		<dataloader.version>0.2.0</dataloader.version>
+		<dataloader.version>0.3.0</dataloader.version>
 	</properties>
 
 	<modules>
