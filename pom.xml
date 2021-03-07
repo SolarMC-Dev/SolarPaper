@@ -23,6 +23,7 @@
 	<modules>
 		<module>SolarPaper-Server</module>
 		<module>SolarPaper-API</module>
+		<module>SolarPaper-PostServer</module>
 	</modules>
 
 	<repositories>
