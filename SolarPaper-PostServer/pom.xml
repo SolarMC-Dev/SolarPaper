@@ -94,7 +94,7 @@
 							<goal>deploy-file</goal>
 						</goals>
 						<configuration>
-							<file>target/modularize/org.bukkit.craftbukkit.jar</file>
+							<file>target/module-gen/org.bukkit.craftbukkit.jar</file>
 							<pomFile>../SolarPaper-Server/pom.xml</pomFile>
 						</configuration>
 					</execution>
