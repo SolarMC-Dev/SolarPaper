@@ -24,12 +24,19 @@ JAR_PATH=$JAR_PATH_REMAP
 jdeps --module-path target/dependency/ --multi-release $MULTI_RELEASE --generate-module-info target/module-gen $JAR_PATH
 
 MODULE_INFO_JAVA="target/module-gen/$MODULE_NAME/versions/$MULTI_RELEASE/module-info.java"
+
+run_sed () {
+  COMMAND=$@
+  echo "sed -i '$COMMAND' $MODULE_INFO_JAVA"
+  sed -i '$COMMAND' $MODULE_INFO_JAVA
+}
+
 # Remove exports directives
-echo "sed -i 's/exports/\/\/ exports/' $MODULE_INFO_JAVA"
-sed -i 's/exports/\/\/ exports/' $MODULE_INFO_JAVA
+run_sed s/exports/\/\/ exports/
 # Export gg.solarmc.solarserver.config to dazzleconf
-echo "sed -i '1i exports gg.solarmc.solarserver.config to space.arim.dazzleconf;' $MODULE_INFO_JAVA"
-sed -i '2i exports gg.solarmc.solarserver.config to space.arim.dazzleconf;' $MODULE_INFO_JAVA
+run_sed 1i exports gg.solarmc.solarserver.config to space.arim.dazzleconf;
+# Specify usage of ClassDefinerFactory
+run_sed 2i uses com.destroystokyo.paper.event.executor.ClassDefinerFactory;
 
 # Compile module-info.java
 javac --module-path target/dependency/$PREVIEW --release $JDK_VERSION --patch-module $MODULE_NAME=$JAR_PATH $MODULE_INFO_JAVA
