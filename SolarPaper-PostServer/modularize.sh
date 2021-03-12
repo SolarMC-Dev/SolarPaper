@@ -28,15 +28,15 @@ MODULE_INFO_JAVA="target/module-gen/$MODULE_NAME/versions/$MULTI_RELEASE/module-
 run_sed () {
   COMMAND=$@
   echo "sed -i '$COMMAND' $MODULE_INFO_JAVA"
-  sed -i '$COMMAND' $MODULE_INFO_JAVA
+  sed -i $COMMAND $MODULE_INFO_JAVA
 }
 
 # Remove exports directives
-run_sed s/exports/\/\/ exports/
+sed -i 's/exports/\/\/ exports/' $MODULE_INFO_JAVA
 # Export gg.solarmc.solarserver.config to dazzleconf
-run_sed 1i exports gg.solarmc.solarserver.config to space.arim.dazzleconf;
+sed -i '2i exports gg.solarmc.solarserver.config to space.arim.dazzleconf;' $MODULE_INFO_JAVA
 # Specify usage of ClassDefinerFactory
-run_sed 2i uses com.destroystokyo.paper.event.executor.ClassDefinerFactory;
+sed -i '2i uses com.destroystokyo.paper.event.executor.ClassDefinerFactory;' $MODULE_INFO_JAVA
 
 # Compile module-info.java
 javac --module-path target/dependency/$PREVIEW --release $JDK_VERSION --patch-module $MODULE_NAME=$JAR_PATH $MODULE_INFO_JAVA
