@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>gg.solarmc</groupId>
 		<artifactId>solar-parent</artifactId>
-		<version>0.4.0</version>
+		<version>0.5.0</version>
 	</parent>
 
 	<artifactId>solarpaper-parent</artifactId>
@@ -26,22 +26,6 @@
 		<module>SolarPaper-PostServer</module>
 		<module>SolarPaper-Assistant</module>
 	</modules>
-
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<configuration>
-						<source>15</source>
-						<target>15</target>
-						<compilerArgs>--enable-preview</compilerArgs>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
 
 	<dependencyManagement>
 		<dependencies>
