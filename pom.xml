@@ -35,6 +35,17 @@
 				<version>${junit5.version}</version>
 				<scope>test</scope>
 			</dependency>
+			<!--
+			commons-lang3 is used by:
+			1. authlib
+			2. SolarPaper-Server
+			3. SolarPaper-API since it was migrated off commons-lang 2
+			-->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.12.0</version>
+			</dependency>
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
