@@ -1,9 +1,9 @@
-import gg.solarmc.serverassistant.ModularClassDefiner;
+import gg.solarmc.paper.serverassistant.ModularClassDefiner;
 
-module gg.solarmc.serverassistant {
+module gg.solarmc.paper.serverassistant {
 
     requires org.bukkit;
 
-    exports gg.solarmc.serverassistant;
+    exports gg.solarmc.paper.serverassistant;
     provides com.destroystokyo.paper.event.executor.ClassDefinerFactory with ModularClassDefiner;
 }

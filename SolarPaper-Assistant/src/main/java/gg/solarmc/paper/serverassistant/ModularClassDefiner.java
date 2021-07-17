@@ -1,4 +1,4 @@
-package gg.solarmc.serverassistant;
+package gg.solarmc.paper.serverassistant;
 
 import com.destroystokyo.paper.event.executor.ClassDefiner;
 import com.destroystokyo.paper.event.executor.ClassDefinerFactory;
