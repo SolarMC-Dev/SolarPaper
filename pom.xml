@@ -23,9 +23,10 @@
 	</properties>
 
 	<modules>
-		<module>SolarPaper-Server</module>
 		<module>SolarPaper-API</module>
 		<module>SolarPaper-Assistant</module>
+		<module>SolarPaper-ItemSerializer</module>
+		<module>SolarPaper-Server</module>
 	</modules>
 
 	<build>
