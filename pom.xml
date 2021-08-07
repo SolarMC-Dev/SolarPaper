@@ -19,7 +19,7 @@
 		<log4j.version>2.14.1</log4j.version>
 		<junit5.version>5.7.2</junit5.version>
 		<mockito.version>3.11.0</mockito.version>
-		<dataloader.version>0.5.0</dataloader.version>
+		<dataloader.version>0.5.2</dataloader.version>
 	</properties>
 
 	<modules>
