@@ -26,7 +26,36 @@ jobs:
         distribution: 'zulu'
     - name: Build with Maven
       run: mvn clean -B -U verify
-  deploy:
+  deploy-api:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          token: ${{ secrets.GIT_TOKEN }}
+      - name: Cache Maven packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+          distribution: 'zulu'
+          server-id: solar-repo
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+      - name: Build with Maven
+        run: mvn clean -B -U deploy -Pdeploy-gpl3
+        env:
+          MAVEN_USERNAME: ${{ secrets.MAVEN_CD_USER }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_CD_PASS }}
+  deploy-server:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     needs: build
